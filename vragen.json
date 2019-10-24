@@ -1,0 +1,51 @@
+{
+    "vragen": [
+        {
+            "vraag": "test de text vraag",
+            "andwoord": "chantal",
+            "media": "C:\\Users\\btilburg\\Pictures\\NUZQ5625.jpg"
+        },
+        {
+            "vraag": "Hyper Text Markup Language Stand For?",
+            "antworden": [
+                "JavaScript",
+                "XHTML",
+                "CSS",
+                "HTML"
+            ],
+            "andwoord": "HTML",
+            "media": "C:\\Users\\btilburg\\Pictures\\NUZQ5625.jpg"
+        },
+        {
+            "vraag": "Which language is used for styling web pages?",
+            "antworden": [
+                "HTML",
+                "JQuery",
+                "CSS",
+                "XML"
+            ],
+            "andwoord": "CSS"
+        },
+        {
+            "vraag": "Which is not a JavaScript Framework?",
+            "antworden": [
+                "Python Script",
+                "JQuery",
+                "Django",
+                "NodeJS"
+            ],
+            "andwoord": "Django",
+            "media": "C:\\Users\\btilburg\\Pictures\\NUZQ5625.jpg"
+        },
+        {
+            "vraag": "Which is used for Connect To Database?",
+            "antworden": [
+                "PHP",
+                "HTML",
+                "JS",
+                "All"
+            ],
+            "andwoord": "PHP"
+        }
+    ]
+}
