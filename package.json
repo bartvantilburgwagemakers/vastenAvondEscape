@@ -1,0 +1,31 @@
+{
+  "name": "vastenAvondEscape",
+  "version": "1.0.0",
+  "description": "vasten avond escape room pwa",
+  "main": "init.js",
+  "dependencies": {
+    "babel-loader": "^8.0.6",
+    "pouchdb-browser": "^7.1.1",
+    "webpack": "^4.41.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/preset-env": "^7.6.3",
+    "babel-loader": "^8.0.6",
+    "jest": "^24.9.0",
+    "webpack": "^4.41.2"
+  },
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bartvantilburgwagemakers/vastenAvondEscape.git"
+  },
+  "author": "bart van Tilburg-Wagemakers",
+  "license": "mit",
+  "bugs": {
+    "url": "https://github.com/bartvantilburgwagemakers/vastenAvondEscape/issues"
+  },
+  "homepage": "https://github.com/bartvantilburgwagemakers/vastenAvondEscape"
+}

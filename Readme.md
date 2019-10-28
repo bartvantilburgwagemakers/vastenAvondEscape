@@ -24,3 +24,7 @@ or `npx jest --watch`
 #### config
 
 [](https://jestjs.io/docs/en/getting-started#using-typescript)
+
+### [PouchDB](https://pouchdb.com/learn.html)
+
+a wrapper around IndexDB 
