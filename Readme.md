@@ -1,12 +1,13 @@
 # De vastenavond escape
 
 ## Setup
-
-1. `choco install nodejs`
-2. `npm install -g typescript`
-3. `npm i jest @types/jest ts-jest -D`
+    nodejs v4+ is needed 
+1. `choco install nodejs` 
+<!-- 2. `npm install -g typescript` -->
+<!-- 3. `npm i jest @types/jest ts-jest -D` -->
 4. `npm add --dev babel-jest @babel/core @babel/preset-env`
-5. `npm add --dev @babel/preset-typescript`
+6. `npm install pouchdb save-dev`
+
 
 ## Info
 

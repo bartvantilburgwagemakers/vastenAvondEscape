@@ -1,3 +1,5 @@
+var PouchDB = require('pouchdb');
+
 var db = new PouchDB('vastenAvondApp');
 var remoteCouch = false;
 
@@ -28,4 +30,12 @@ function checkboxChanged(todo, event) {
 
 function deleteButtonPressed(todo) {
     db.remove(todo);
+}
+
+module.exports = {
+    AddTodo: addTodo,
+    ShowTodos: showTodos,
+    CheckboxChanged: checkboxChanged,
+    DeleteButtonPressed: deleteButtonPressed
+
 }

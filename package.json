@@ -5,7 +5,9 @@
     "main": "init.js",
     "dependencies": {
         "babel-loader": "^8.0.6",
+        "pouchdb": "^7.1.1",
         "pouchdb-browser": "^7.1.1",
+        "save-dev": "0.0.1-security",
         "webpack": "^4.41.2"
     },
     "devDependencies": {
@@ -17,6 +19,9 @@
     },
     "scripts": {
         "test": "jest"
+    },
+    "jest": {
+        "verbose": true
     },
     "repository": {
         "type": "git",
