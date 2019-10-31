@@ -9,12 +9,14 @@ function addTodo(text) {
         title: text,
         completed: false
     };
-    db.put(todo, function callback(err, result) {
+   return db.put(todo, function callback(err, result) {
         if (!err) {
             console.log('Successfully posted a todo!');
+            return true;
         }
+        console.log(`Error posted a todo ${err}`);
+        return false;
     });
-
 }
 
 function showTodos() {
