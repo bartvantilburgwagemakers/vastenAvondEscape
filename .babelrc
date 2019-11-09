@@ -1,9 +1,19 @@
 {
   "presets": [
-    "@babel/preset-env"
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "esmodules": true
+        }
+      }
+    ]
   ],
   "plugins": [
     "@babel/plugin-transform-async-to-generator",
-    "@babel/plugin-transform-runtime"   
+    "@babel/plugin-transform-runtime",
+    ["transform-es2015-modules-commonjs", {
+      "allowTopLevelThis": true
+    }]   
   ]
 }

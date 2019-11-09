@@ -1,8 +1,8 @@
-import * as DataRepo from "../lib/DataBaseRepo.js";
-import * as LocationService from "../lib/LocationService.js";
+import * as DataRepo from "../src/DataBaseRepo.js";
+import * as LocationService from "../src/LocationService.js";
 
-jest.mock('LocationService')
-
-export function GetNextQuestion(){
-    LocationService.GetCurrentLocation()
+export function GetNextQuestion() {
+    LocationService.GetCurrentLocation();
+    DataRepo.addTodo("test werk dit");
+    DataRepo.GetByLoc();
 }

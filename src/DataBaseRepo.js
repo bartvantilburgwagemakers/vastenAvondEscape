@@ -1,15 +1,14 @@
-var PouchDB = require('pouchdb');
-
+// var PouchDB = require('pouchdb-browser');
 var db = new PouchDB('vastenAvondApp');
 var remoteCouch = false;
 
-function addTodo(text) {
+export function addTodo(text) {
     var todo = {
         _id: new Date().toISOString(),
         title: text,
         completed: false
     };
-   return db.put(todo, function callback(err, result) {
+    return db.put(todo, function callback(err, result) {
         if (!err) {
             console.log('Successfully posted a todo!');
             return true;
@@ -25,6 +24,13 @@ export function showTodos() {
     });
 }
 
+export function GetByLoc() {
+    var doc = db.get("2019-11-09T18:36:13.877Z").then(function(doc) {
+        console.log(doc);
+    });
+
+}
+
 function checkboxChanged(todo, event) {
     todo.completed = event.target.checked;
     db.put(todo);
@@ -36,13 +42,4 @@ function deleteButtonPressed(todo) {
 
 function test() {
     return 1;
-}
-
-module.exports = {
-    AddTodo: addTodo,
-    ShowTodos: showTodos,
-    CheckboxChanged: checkboxChanged,
-    DeleteButtonPressed: deleteButtonPressed,
-    Test: test
-
 }

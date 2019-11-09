@@ -1,5 +1,13 @@
-<script src="node_modules/pouchdb/dist/pouchdb.min.js"></script>
-<script src="src/Data.js"></script>
+<!-- <script src="node_modules/pouchdb/dist/pouchdb.min.js"></script> -->
+<script src="//cdn.jsdelivr.net/pouchdb/3.2.0/pouchdb.min.js"></script>
+
+<!-- <script src="lib/DataBaseRepo.js"></script> -->
+<script type="module">
+    import { GetCurrentLocation } from '/src/LocationService.js'; window.GetCurrentLocation = GetCurrentLocation;
+</script>
+<script type="module">
+    import { GetNextQuestion } from '/src/QuestionsSerivce.js'; window.GetNextQuestion = GetNextQuestion;
+</script>
 <!DOCTYPE html>
 <html>
 
@@ -10,10 +18,13 @@
 </head>
 
 <body>
+
     <div class="grid">
         <div id="quiz">
             <h1>Quiz in JavaScript Webdevtrick.com</h1>
-
+            <div id="loc"></div>
+            <button onclick="window.GetCurrentLocation()"><span >locatie test </span></button>
+            <button onclick="window.GetNextQuestion()"><span >nex question </span></button>
             <hr style="margin-bottom: 20px">
 
             <p id="question"></p>

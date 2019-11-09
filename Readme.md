@@ -29,3 +29,6 @@ or `npx jest --watch`
 ### [PouchDB](https://pouchdb.com/learn.html)
 
 a wrapper around IndexDB 
+
+
+npm i -D babel-core babel-polyfill babel-preset-es2015 babel-preset-stage-0 babel-loader
