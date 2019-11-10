@@ -58,7 +58,7 @@ export function GetByLoc(long, lat) {
 
 function GetNextQuestion() {
     db.find({
-        selector: { IsJuistBeandwoord: false },
+        selector: {Location_long: null, Location_lat: null , IsJuistBeandwoord: false },
         sort: ['_id'],
         limit: 1
     }).then(function(result) {

@@ -23,10 +23,11 @@
             <h1>Escape de Vastenavond</h1>
             <div id="loc"></div>
             <button onclick="window.GetCurrentLocation()"><span >locatie test </span></button>
-            <button onclick="window.GetNextQuestion()"><span >nex question </span></button>
+            <button onclick="window.GetNextQuestion()"><span >volgende vraag</span></button>
             <hr style="margin-bottom: 20px">
 
-            <p id="question"></p>
+            <p id="question"> druk op volgende vraag </p>
+            <sub id="hint"></sub>
             <img id="image" class="questionImg"></img>
 
             <div class="answerText" id="answerTextDiv">
@@ -40,9 +41,6 @@
             </footer>
         </div>
     </div>
-
-    <script src="question.js"></script>
-
 </body>
 
 </html>

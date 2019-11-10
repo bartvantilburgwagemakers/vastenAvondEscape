@@ -22,6 +22,8 @@ export function NewVraag(id, vraag, antwoord, hint, media_uri) {
         Antwoord: antwoord,
         Hint: hint,
         IsJuistBeandwoord: false,
-        Media_uri: media_uri
+        Media_uri: media_uri,
+        Location_long: null,
+        Location_lat: null
     }
 }
