@@ -1,6 +1,6 @@
 import * as LocationService from "../src/LocationService.js";
 
-export function NewVraag(id, lat, long, vraag, hint, media_uri ){
+export function NewVraag(id, lat, long, vraag, antwoord, hint){
 
     var shortLat= LocationService.GetShortLatitude(lat);
     var shortLong= LocationService.GetShortLongitude(long);
@@ -10,8 +10,14 @@ export function NewVraag(id, lat, long, vraag, hint, media_uri ){
         Location_long: shortLong,
         Location_lat: shortLat,
         Vraag: vraag,
-        hint: hint,
-        media_uri :media_uri,
-        IsJuistBeandword:false
+        Antwoord: antwoord,
+        Hint: hint,
+        IsJuistBeandwoord: false
     }
 }
+export function NewVraag(id, lat, long, vraag, antwoord ,hint, media_uri ){
+    var vraag = NewVraag(id, lat, long, vraag, antwoord, hint);
+    vraag.media_uri =media_uri;
+    return vraag;
+}
+

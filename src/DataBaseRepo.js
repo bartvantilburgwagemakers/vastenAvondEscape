@@ -3,7 +3,7 @@ var db = new PouchDB('vastenAvondApp');
 
 db.createIndex({
     index: {
-      fields: ['Location_long', 'Location_lat']
+      fields: ['Location_long', 'Location_lat', 'IsJuistBeandwoord']
     }
   }).then(function (result) {
     // handle result
@@ -29,26 +29,35 @@ export function GetByLoc(long, lat) {
     
     console.log( "GetByLoc "+long +"," +lat)
     db.find({
-        selector: {Location_long: long , Location_lat: lat },
+        selector: {Location_long: long , Location_lat: lat , IsJuistBeandwoord: false},
       }).then(function (result) {
           console.log(result);
         if(result.docs.length !=0){
           var element = document.getElementById("question");
           element.innerHTML = result.docs[0].Vraag;
         }else{
-          console.log("kan niet vinden ");
           
+          console.log("kan niet vinden ");
         }
 
        }).catch(function (err) {
         console.log(err);
       });
-
 }
 
-function checkboxChanged(todo, event) {
-    todo.completed = event.target.checked;
-    db.put(todo);
+export function SetQuestionsIfNeeded(){
+    var doc = db.get("1").then(function(doc) {
+    }).catch(function (err) {
+        if(err.status === 404){
+            console.log("ok dan moeten we maar eens vragen gaan ophalen");
+
+        }
+  });
+}
+
+export function HasAnswered(vraag) {
+    vraag.IsJuistBeandwoord = true;
+    db.put(vraag);
 }
 
 function deleteButtonPressed(todo) {
