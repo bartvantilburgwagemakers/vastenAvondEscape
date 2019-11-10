@@ -11,8 +11,15 @@ export async function GetCurrentLocation() {
         });
     } else {
         var locDiv = document.getElementById("loc");
-        locDiv.innerText = " Location (gps) not suported";
+        locDiv.innerText = " Location (gps) not supported";
     }
+}
+export function GetShortLatitude(lat){
+    return lat.toString().substring(0,7);
+}
+  
+export function GetShortLongitude(long){
+    return long.toString().substring(0,6);
 }
 
 function setPosition(position) {

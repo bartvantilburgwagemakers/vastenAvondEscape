@@ -7,14 +7,16 @@ export function GetNextQuestion() {
     loc.then(function (result) {
         var latitude = result[0];
         var longitude = result[1];
-        // DataRepo.GetByLoc(latitude, longitude);
-        DataRepo.GetByLoc(51.49675729999999,4.313648099999999);
+        var shortLat= LocationService.GetShortLatitude(latitude);
+        var shortLong= LocationService.GetShortLongitude(longitude);
+        DataRepo.GetByLoc(shortLong, shortLat);
     })
     AddNewQuestion();
   
 }
 
 function AddNewQuestion(){
-    var vraag = Vraag.NewVraag("1", 51.49675729999999, 4.313648099999999, "wat is de snelheid van een zwaluw " );
+    var vraag = Vraag.NewVraag("1", 51.4882363 , 4.3190943, "wat is de snelheid van een zwaluw " );
     DataRepo.add(vraag);
+    
 }

@@ -10,7 +10,7 @@ db.createIndex({
   }).catch(function (err) {
     console.log(err);
   });
-
+window.db = db;
 var remoteCouch = false;
 
 export function add(entity) {
@@ -26,16 +26,19 @@ export function add(entity) {
 }
 
 export function GetByLoc(long, lat) {
-    // var doc = db.get("2019-11-09T18:36:13.877Z").then(function(doc) {
-    //     console.log(doc);
-    // });
+    
     console.log( "GetByLoc "+long +"," +lat)
     db.find({
         selector: {Location_long: long , Location_lat: lat },
       }).then(function (result) {
           console.log(result);
-        var element = document.getElementById("question");
-        element.innerHTML = result.docs[0].Vraag;
+        if(result.docs.length !=0){
+          var element = document.getElementById("question");
+          element.innerHTML = result.docs[0].Vraag;
+        }else{
+          console.log("kan niet vinden ");
+          
+        }
 
        }).catch(function (err) {
         console.log(err);
@@ -50,8 +53,4 @@ function checkboxChanged(todo, event) {
 
 function deleteButtonPressed(todo) {
     db.remove(todo);
-}
-
-function test() {
-    return 1;
 }
