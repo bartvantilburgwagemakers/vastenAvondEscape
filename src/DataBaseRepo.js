@@ -31,7 +31,7 @@ export function add(entity) {
             console.log('Successfully posted a entity!');
             return true;
         }
-        console.log(`Error posted a entity ${err}`);
+        console.log(`Error posted a entity ${err} for ${entity._id}`);
         return false;
     });
 }
@@ -58,7 +58,7 @@ export function GetByLoc(long, lat) {
 
 function GetNextQuestion() {
     db.find({
-        selector: {Location_long: null, Location_lat: null , IsJuistBeandwoord: false },
+        selector: { Location_long: null, Location_lat: null, IsJuistBeandwoord: false },
         sort: ['_id'],
         limit: 1
     }).then(function(result) {

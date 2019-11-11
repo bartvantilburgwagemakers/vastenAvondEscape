@@ -14,12 +14,12 @@ export async function GetCurrentLocation() {
         locDiv.innerText = " Location (gps) not supported";
     }
 }
-export function GetShortLatitude(lat){
-    return lat.toString().substring(0,7);
+export function GetShortLatitude(lat) {
+    return lat.toString().substring(0, 7);
 }
-  
-export function GetShortLongitude(long){
-    return long.toString().substring(0,6);
+
+export function GetShortLongitude(long) {
+    return long.toString().substring(0, 6);
 }
 
 function setPosition(position) {
@@ -45,5 +45,27 @@ export function showError(error) {
         case error.UNKNOWN_ERROR:
             x.innerHTML = "An unknown error occurred."
             break;
+    }
+}
+
+const watcher = navigator.geolocation.watchPosition(displayLocationInfo);
+
+setTimeout(() => {
+    navigator.geolocation.clearWatch(watcher);
+}, 15000000);
+
+function displayLocationInfo(position) {
+    const lng = GetShortLongitude(position.coords.longitude);
+    const lat = GetShortLatitude(position.coords.latitude);
+    var long = GetShortLongitude("4.3139517");
+    var late = GetShortLatitude("51.4966615");
+    // console.log(`longitude: ${ lng } ${long} | latitude: ${ lat } ${late}`);
+    if (lng === long && lat === late) {
+        var locDiv = document.getElementById("loc");
+        locDiv.innerText = "Welkom Thuis lieve schat ";
+        var vraagDiv = document.getElementById("question");
+        vraagDiv.innerHTML = "Ik hou van je ";
+    } else {
+        window.GetNextQuestion();
     }
 }
