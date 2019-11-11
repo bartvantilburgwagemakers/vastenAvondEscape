@@ -29,20 +29,34 @@ function AddNewQuestion() {
     var vraag3 = Vraag.NewVraagLatLong("3", "51.49255506", "4.2877107", "Ik hang boven het toilet", "de teerkastje", "Je bevond je bij de saeck.")
     DataRepo.add(vraag3);
 
-    var vraag4 = Vraag.NewVraagLatLong("4", "51.49461571" ,"4.28639539", "waar ben je", "draak", "draak")
+    var vraag4 = Vraag.NewVraagLatLong("4", "51.49461571" ,"4.28639539", "waar ben je", "draak", "draak");
     DataRepo.add(vraag4);
 
-    var vraag5 = Vraag.NewVraagLatLong("5", "51.495688","4.28336021", "waar ben je", "Zwijnshoofd", "Zwijnshoofd")
+    var vraag5 = Vraag.NewVraagLatLong("5", "51.495688","4.28336021", "waar ben je", "Zwijnshoofd", "Zwijnshoofd");
     DataRepo.add(vraag5);
 
-    var vraag6 = Vraag.NewVraagLatLong("6", "51.49255506","4.2877107", "waar ben je", "De saeck", "De saeck")
+    var vraag6 = Vraag.NewVraagLatLong("6", "51.49255506","4.2877107", "waar ben je", "De saeck", "De saeck");
     DataRepo.add(vraag6);
 
-    var Stoellemat = Vraag.NewVraagLatLong("7", "51.49471892","4.28190966", "waar ben je", "Stoellemat", "Stoellemat")
+    var Stoellemat = Vraag.NewVraagLatLong("7", "51.49471892","4.28190966", "waar ben je", "Stoellemat", "Stoellemat");
     DataRepo.add(Stoellemat);
 
+    var OnderDePeperbus =Vraag.NewVraagLatLong("8", "51.4943376","4.28743893", "waar ben je", "Onder de peperbus ", "Onder de peperbus ");
+    DataRepo.add(OnderDePeperbus);
 
-    console.log("vargen toegevoegd");
+    var GroenePaard =Vraag.NewVraagLatLong("9", "51.49420007","4.28808471", "waar ben je", "Groene paard", "Groene paard");
+    DataRepo.add(GroenePaard);
+
+    var hetGeitje = Vraag.NewVraagLatLong("10", "51.49740045","4.29042469", "waar ben je", "het geitje", "het geitje");
+    DataRepo.add(hetGeitje);
+
+    var motier = Vraag.NewVraagLatLong("11", "51.4959334","4.2774286", "waar ben je", "motier", "motier");
+    DataRepo.add(motier);
+
+    var dweilpak = Vraag.NewVraagLatLong("12", "51.49644713","4.27688547", "waar ben je", "dweilpak", "dweilpak");
+    DataRepo.add(dweilpak);
+
+    console.log("vragen toegevoegd");
 }
 
 export function SetCurrentQuestion(question) {
