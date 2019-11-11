@@ -66,6 +66,6 @@ function displayLocationInfo(position) {
         var vraagDiv = document.getElementById("question");
         vraagDiv.innerHTML = "Ik hou van je ";
     } else {
-        window.GetNextQuestion();
+        // window.GetNextQuestion();
     }
 }
