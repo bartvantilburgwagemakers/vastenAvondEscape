@@ -32,3 +32,7 @@ a wrapper around IndexDB
 
 
 npm i -D babel-core babel-polyfill babel-preset-es2015 babel-preset-stage-0 babel-loader
+
+# pwa 
+
+go to https://www.pwabuilder.com/serviceworker for info and help 

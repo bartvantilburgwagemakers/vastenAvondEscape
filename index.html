@@ -1,6 +1,6 @@
 <script src="//cdn.jsdelivr.net/pouchdb/3.2.0/pouchdb.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/pouchdb@7.0.0/dist/pouchdb.find.js"></script>
-
+<link rel='manifest' href='/manifest.webmanifest'>
 <!-- <script src="lib/DataBaseRepo.js"></script> -->
 <script type="module">
     import { GetCurrentLocation } from '/src/LocationService.js'; window.GetCurrentLocation = GetCurrentLocation;
@@ -22,6 +22,7 @@
         <div id="quiz">
             <h1>Escape de Vastenavond</h1>
             <div id="loc"></div>
+            <button onclick="install()"> Install</button>
             <button onclick="window.GetCurrentLocation()"><span >locatie test </span></button>
             <button onclick="window.GetNextQuestion()"><span >volgende vraag</span></button>
             <hr style="margin-bottom: 20px">
@@ -42,5 +43,5 @@
         </div>
     </div>
 </body>
-
+<script src="/src/Install.js" ></script>
 </html>

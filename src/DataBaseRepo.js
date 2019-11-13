@@ -1,5 +1,4 @@
-import * as QuestionsSerivce from "../src/QuestionsSerivce.js";
-import { longitude } from "./LocationService.js";
+import * as QuestionsService from "../src/QuestionsSerivce.js";
 
 // var PouchDB = require('pouchdb-browser');
 var db = new PouchDB('vastenAvondApp');
@@ -44,7 +43,7 @@ export function GetByLoc(long, lat) {
     }).then(function(result) {
         console.log(result);
         if (result.docs.length != 0) {
-            QuestionsSerivce.SetCurrentQuestion(result.docs[0]);
+            QuestionsService.SetCurrentQuestion(result.docs[0]);
             console.log("set question by loc" + result.docs[0]._id);
         } else {
             console.log("kan niet vinden ");
@@ -63,7 +62,7 @@ function GetNextQuestion() {
         limit: 1
     }).then(function(result) {
         if (result.docs.length != 0) {
-            QuestionsSerivce.SetCurrentQuestion(result.docs[0]);
+            QuestionsService.SetCurrentQuestion(result.docs[0]);
             console.log("set question by next" + result.docs[0]._id);
         }
     }).catch(function(err) {
@@ -77,6 +76,15 @@ export function SetQuestionsIfNeeded() {
             console.log("ok dan moeten we maar eens vragen gaan ophalen");
         }
     });
+}
+
+export function DbInfo(){
+    return db.info().then(function (result) {
+       return result.doc_count;
+      }).catch(function (err) {
+        console.log(err);
+        return 0;
+      });
 }
 
 export function HasAnswered(vraag) {

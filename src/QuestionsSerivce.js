@@ -2,6 +2,8 @@ import * as DataRepo from "../src/DataBaseRepo.js";
 import * as LocationService from "../src/LocationService.js";
 import * as Vraag from "../src/Vraag.js"
 
+var questionCount = 14;
+
 export function GetNextQuestion() {
     var loc = LocationService.GetCurrentLocation();
     loc.then(function(result) {
@@ -12,7 +14,11 @@ export function GetNextQuestion() {
         DataRepo.GetByLoc(shortLong, shortLat);
         window.GetByLoc = DataRepo.GetByLoc;
     });
-    AddNewQuestion();
+    DataRepo.DbInfo().then( function(DbInfo){
+        if(DbInfo < questionCount){
+            AddNewQuestion();
+        }
+    });
 }
 
 function AddNewQuestion() {
