@@ -1,3 +1,4 @@
+import * as QuestionsService from "../src/QuestionsSerivce.js";
 export let latitude, longitude;
 
 export async function GetCurrentLocation() {
@@ -50,9 +51,15 @@ export function showError(error) {
 
 const watcher = navigator.geolocation.watchPosition(displayLocationInfo);
 
-setTimeout(() => {
+export function StopWatching() {
     navigator.geolocation.clearWatch(watcher);
-}, 15000000);
+};
+
+export function StartWatching() {
+    navigator.geolocation.clearWatch(watcher);
+    watcher = navigator.geolocation.watchPosition(displayLocationInfo);
+}
+
 
 function displayLocationInfo(position) {
     const lng = GetShortLongitude(position.coords.longitude);
@@ -65,7 +72,9 @@ function displayLocationInfo(position) {
         locDiv.innerText = "Welkom Thuis lieve schat ";
         var vraagDiv = document.getElementById("question");
         vraagDiv.innerHTML = "Ik hou van je ";
+        StopWatching();
     } else {
-        // window.GetNextQuestion();
+        GetNextQuestion();
+        StopWatching();
     }
 }

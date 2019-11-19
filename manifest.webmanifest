@@ -1,23 +1,30 @@
 {
-	"dir" : "ltr",
-	"lang" : "Dutch",
-	"name" : "vastenavond escape",
-	"scope" : "/",
-	"display" : "browser",
-	"start_url" : "https://vastenavondescape.netlify.com/",
-	"short_name" : "VEsc",
-	"theme_color" : "transparent",
-	"description" : "een spel met uitdagingen voor tijden de bergse vastenavond in het krabbegat ",
-	"orientation" : "landscape",
-	"background_color" : "transparent",
-	"related_applications" : "",
-	"prefer_related_applications" : "false",
-	"icons" : [
-		{
-			"src": "favicon.ico",
-			"sizes": "16x16"
-		}
-		],
-	"screenshots" : [],
-	"generated" : "true"
+    "dir": "ltr",
+    "lang": "Dutch",
+    "name": "vastenavond escape",
+    "scope": "/",
+    "display": " minimal-ui",
+    "start_url": "https://vastenavondescape.netlify.com/",
+    "short_name": "VEsc",
+    "theme_color": "transparent",
+    "description": "een spel met uitdagingen voor tijden de bergse vastenavond in het krabbegat ",
+    "orientation": "landscape",
+    "background_color": "transparent",
+    "related_applications": "",
+    "prefer_related_applications": "false",
+    "icons": [{
+        "src": "favicon.ico",
+        "sizes": "16x16"
+    }, {
+        "src": "Assets/favIcons/ms-icon-310x310.png",
+        "sizes": "310x310",
+        "type": "image/png"
+
+    }, {
+        "src": "Assets/favIcons/",
+        "sizes": "310x310",
+        "type": "image/png"
+    }],
+    "screenshots": [],
+    "generated": "true"
 }
