@@ -8,7 +8,7 @@
     "short_name": "VEsc",
     "theme_color": "transparent",
     "description": "een spel met uitdagingen voor tijden de bergse vastenavond in het krabbegat ",
-    "orientation": "landscape",
+    "orientation": "portrait-primary",
     "background_color": "transparent",
     "related_applications": "",
     "prefer_related_applications": "false",

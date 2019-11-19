@@ -74,7 +74,7 @@ function displayLocationInfo(position) {
         vraagDiv.innerHTML = "Ik hou van je ";
         StopWatching();
     } else {
-        GetNextQuestion();
+        QuestionsService.GetNextQuestion();
         StopWatching();
     }
 }

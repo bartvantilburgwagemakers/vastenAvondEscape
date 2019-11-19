@@ -2,7 +2,7 @@ import * as DataRepo from "../src/DataBaseRepo.js";
 import * as LocationService from "../src/LocationService.js";
 import * as Vraag from "../src/Vraag.js"
 
-var questionCount = 14;
+var questions = [];
 
 export function GetNextQuestion() {
     var loc = LocationService.GetCurrentLocation();
@@ -15,61 +15,52 @@ export function GetNextQuestion() {
         window.GetByLoc = DataRepo.GetByLoc;
     });
     DataRepo.DbInfo().then( function(DbInfo){
-        if(DbInfo < questionCount){
+        if(DbInfo > 2){ DbInfo = DbInfo -2; }// door de indexe die ook mee komen
+        if(DbInfo < questions.length){
             AddNewQuestion();
         }
     });
 }
 
 function AddNewQuestion() {
-    // var questions = [];
+    
+    GetQuestions();
+    var i;
+    for (i = 0; i < questions.length; i++) { 
+        DataRepo.add(questions[i]);
+     }
 
-    // var vraag = Vraag.NewVraag("0", 51.4882363 , 4.3190943, "wat is de snelheid van een zwaluw " );
-    // DataRepo.add(vraag);
-    var vraag1 = Vraag.NewVraag("1", "Onlosmakelijk aan de draak verbonden: sint <br/> <br/> Nicolaas= 1 " +
-        "<br/> Antonius= 2  <br/>Petrus= 3 <br/> Joris= 4 <br/> Jakobus= 5 <br/>  Walrik= 6 <br/> Maarten= 7 <br/> Anna= 8", "11", "het zijn er 2+"
-    );
-    DataRepo.add(vraag1);
-
-    var vraag2 = Vraag.NewVraag("2", "Wat is de laatste zin en officiële tittel die bij dit beeld hoort?", "Kek naar oe eige", "", "../Assets/opdracht2.jpg");
-    DataRepo.add(vraag2);
-
-    var vraag3 = Vraag.NewVraagLatLong("3", "51.49255506", "4.2877107", "Ik hang boven het toilet", "de teerkastje", "Je bevond je bij de saeck.")
-    DataRepo.add(vraag3);
-
-    var vraag4 = Vraag.NewVraagLatLong("4", "51.49461571", "4.28639539", "waar ben je", "draak", "draak");
-    DataRepo.add(vraag4);
-
-    var vraag5 = Vraag.NewVraagLatLong("5", "51.495688", "4.28336021", "waar ben je", "Zwijnshoofd", "Zwijnshoofd");
-    DataRepo.add(vraag5);
-
-    var vraag6 = Vraag.NewVraagLatLong("6", "51.49255506", "4.2877107", "waar ben je", "De saeck", "De saeck");
-    DataRepo.add(vraag6);
-
-    var Stoellemat = Vraag.NewVraagLatLong("7", "51.49471892", "4.28190966", "waar ben je", "Stoellemat", "Stoellemat");
-    DataRepo.add(Stoellemat);
-
-    var OnderDePeperbus = Vraag.NewVraagLatLong("8", "51.4943376", "4.28743893", "waar ben je", "Onder de peperbus ", "Onder de peperbus ");
-    DataRepo.add(OnderDePeperbus);
-
-    var GroenePaard = Vraag.NewVraagLatLong("9", "51.49420007", "4.28808471", "waar ben je", "Groene paard", "Groene paard");
-    DataRepo.add(GroenePaard);
-
-    var hetGeitje = Vraag.NewVraagLatLong("10", "51.49740045", "4.29042469", "waar ben je", "het geitje", "het geitje");
-    DataRepo.add(hetGeitje);
-
-    var motier = Vraag.NewVraagLatLong("11", "51.4959334", "4.2774286", "waar ben je", "motier", "motier");
-    DataRepo.add(motier);
-
-    var dweilpak = Vraag.NewVraagLatLong("12", "51.49644713", "4.27688547", "waar ben je", "dweilpak", "dweilpak");
-    DataRepo.add(dweilpak);
-    // for (i = 0; i < questions.length; i++) { 
-    //     console.log(questions[i]);
-    //  }
-
-    var provoost = Vraag.NewVraagLatLong("13", "51.49393937", "4.28543607", "waar ben je", "provoost", "provoost");
-    DataRepo.add(provoost);
     console.log("vragen toegevoegd");
+}
+
+function GetQuestions() {
+    var draakVraag1 = Vraag.NewVraag("1", "Onlosmakelijk aan de draak verbonden: sint <br/> <br/> Nicolaas= 1 " +
+        "<br/> Antonius= 2  <br/>Petrus= 3 <br/> Joris= 4 <br/> Jakobus= 5 <br/>  Walrik= 6 <br/> Maarten= 7 <br/> Anna= 8", "11", "het zijn er 2+");
+    questions.push(draakVraag1);
+    var vraag2 = Vraag.NewVraag("2", "Wat is de laatste zin en officiële tittel die bij dit beeld hoort?", "Kek naar oe eige", "", "../Assets/opdracht2.jpg");
+    questions.push(vraag2);
+    var vraag3 = Vraag.NewVraagLatLong("3", "51.49255506", "4.2877107", "Ik hang boven het toilet", "de teerkastje", "Je bevond je bij de saeck.");
+    questions.push(vraag3);
+    var vraag4 = Vraag.NewVraagLatLong("4", "51.49461571", "4.28639539", "waar ben je", "draak", "draak");
+    questions.push(vraag4);
+    var vraag5 = Vraag.NewVraagLatLong("5", "51.495688", "4.28336021", "waar ben je", "Zwijnshoofd", "Zwijnshoofd");
+    questions.push(vraag5);
+    var vraag6 = Vraag.NewVraagLatLong("6", "51.49255506", "4.2877107", "waar ben je", "De saeck", "De saeck");
+    questions.push(vraag6);
+    var Stoellemat = Vraag.NewVraagLatLong("7", "51.49471892", "4.28190966", "waar ben je", "Stoellemat", "Stoellemat");
+    questions.push(Stoellemat);
+    var OnderDePeperbus = Vraag.NewVraagLatLong("8", "51.4943376", "4.28743893", "waar ben je", "Onder de peperbus ", "Onder de peperbus ");
+    questions.push(OnderDePeperbus);
+    var GroenePaard = Vraag.NewVraagLatLong("9", "51.49420007", "4.28808471", "waar ben je", "Groene paard", "Groene paard");
+    questions.push(GroenePaard);
+    var hetGeitje = Vraag.NewVraagLatLong("10", "51.49740045", "4.29042469", "waar ben je", "het geitje", "het geitje");
+    questions.push(hetGeitje);
+    var motier = Vraag.NewVraagLatLong("11", "51.4959334", "4.2774286", "waar ben je", "motier", "motier");
+    questions.push(motier);
+    var dweilpak = Vraag.NewVraagLatLong("12", "51.49644713", "4.27688547", "waar ben je", "dweilpak", "dweilpak");
+    questions.push(dweilpak);
+    var provoost = Vraag.NewVraagLatLong("13", "51.49393937", "4.28543607", "waar ben je", "provoost", "provoost");
+    questions.push(provoost);
 }
 
 export function SetCurrentQuestion(question) {
@@ -102,3 +93,6 @@ export function SetCurrentQuestion(question) {
         }
     };
 }
+
+GetQuestions();
+
