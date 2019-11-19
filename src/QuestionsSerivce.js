@@ -22,6 +22,8 @@ export function GetNextQuestion() {
 }
 
 function AddNewQuestion() {
+    // var questions = [];
+
     // var vraag = Vraag.NewVraag("0", 51.4882363 , 4.3190943, "wat is de snelheid van een zwaluw " );
     // DataRepo.add(vraag);
     var vraag1 = Vraag.NewVraag("1", "Onlosmakelijk aan de draak verbonden: sint <br/> <br/> Nicolaas= 1 " +
@@ -61,6 +63,9 @@ function AddNewQuestion() {
 
     var dweilpak = Vraag.NewVraagLatLong("12", "51.49644713","4.27688547", "waar ben je", "dweilpak", "dweilpak");
     DataRepo.add(dweilpak);
+    // for (i = 0; i < questions.length; i++) { 
+    //     console.log(questions[i]);
+    //  }
 
     console.log("vragen toegevoegd");
 }
