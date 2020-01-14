@@ -14,21 +14,21 @@ export function GetNextQuestion() {
         DataRepo.GetByLoc(shortLong, shortLat);
         window.GetByLoc = DataRepo.GetByLoc;
     });
-    DataRepo.DbInfo().then( function(DbInfo){
-        if(DbInfo > 2){ DbInfo = DbInfo -2; }// door de indexe die ook mee komen
-        if(DbInfo < questions.length){
+    DataRepo.DbInfo().then(function(DbInfo) {
+        if (DbInfo > 2) { DbInfo = DbInfo - 2; } // door de indexe die ook mee komen
+        if (DbInfo < questions.length) {
             AddNewQuestion();
         }
     });
 }
 
 function AddNewQuestion() {
-    
+
     GetQuestions();
     var i;
-    for (i = 0; i < questions.length; i++) { 
+    for (i = 0; i < questions.length; i++) {
         DataRepo.add(questions[i]);
-     }
+    }
 
     console.log("vragen toegevoegd");
 }
@@ -41,10 +41,10 @@ function GetQuestions() {
     questions.push(vraag2);
     var vraag3 = Vraag.NewVraagLatLong("3", "51.49255506", "4.2877107", "Ik hang boven het toilet", "de teerkastje", "Je bevond je bij de saeck.");
     questions.push(vraag3);
-    var vraag4 = Vraag.NewVraagLatLong("4", "51.49461571", "4.28639539", "waar ben je", "draak", "draak");
-    questions.push(vraag4);
-    var vraag5 = Vraag.NewVraagLatLong("5", "51.495688", "4.28336021", "waar ben je", "Zwijnshoofd", "Zwijnshoofd");
-    questions.push(vraag5);
+    var draak = Vraag.NewVraagLatLong("4", "51.49461571", "4.28639539", "waar ben je", "draak", "draak");
+    questions.push(draak);
+    var zwijnshoofd = Vraag.NewVraagLatLong("5", "51.495688", "4.28336021", "waar ben je", "Zwijnshoofd", "Zwijnshoofd");
+    questions.push(zwijnshoofd);
     var vraag6 = Vraag.NewVraagLatLong("6", "51.49255506", "4.2877107", "waar ben je", "De saeck", "De saeck");
     questions.push(vraag6);
     var Stoellemat = Vraag.NewVraagLatLong("7", "51.49471892", "4.28190966", "waar ben je", "Stoellemat", "Stoellemat");
@@ -95,4 +95,3 @@ export function SetCurrentQuestion(question) {
 }
 
 GetQuestions();
-
