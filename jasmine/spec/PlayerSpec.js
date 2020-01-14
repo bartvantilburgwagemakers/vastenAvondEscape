@@ -72,34 +72,22 @@ describe("Player", function() {
             var result = ArePointsNear(checkPoint, centerPoint, 0);
             expect(result).toBeFalsy();
         });
-        it("should load the location service ", function() {
-            var checkPoint = { lng: 4.3139517, lat: 51.4966615 };
+        it("draak er vlak voor  ", function() {
+            var checkPoint = { lat: 51.494593, lat: 4.286630 };
             var centerPoint = { lng: 4.3139516, lat: 51.4966615 };
-            var result = ArePointsNear(checkPoint, centerPoint, 0.1);
+            var result = ArePointsNear(checkPoint, centerPoint, 0.02);
             expect(result).toBeTruthy();
         });
-        it("draak0.01", function() {
-            var checkPoint = { lng: 4.2863401, lat: 51.4946284 };
+        it("draak0.02 midde op de markt", function() {
+            var checkPoint = { lat: 51.494525, lng: 4.287143 };
             var centerPoint = { lat: 51.49461571, lng: 4.28639539 };
-            var result = ArePointsNear(checkPoint, centerPoint, 0.01);
-            expect(result).toBeTruthy();
+            var result = ArePointsNear(checkPoint, centerPoint, 0.02);
+            expect(result).toBeFalsy();
         });
         it("draak0.02", function() {
             var checkPoint = { lng: 4.2863401, lat: 51.4946284 };
             var centerPoint = { lat: 51.49461571, lng: 4.28639539 };
             var result = ArePointsNear(checkPoint, centerPoint, 0.02);
-            expect(result).toBeTruthy();
-        });
-        it("draak0.0011", function() {
-            var checkPoint = { lng: 4.2863401, lat: 51.4946284 };
-            var centerPoint = { lat: 51.49461571, lng: 4.28639539 };
-            var result = ArePointsNear(checkPoint, centerPoint, 0.0011);
-            expect(result).toBeTruthy();
-        });
-        it("draak0.0015", function() {
-            var checkPoint = { lng: 4.2863401, lat: 51.4946284 };
-            var centerPoint = { lat: 51.49461571, lng: 4.28639539 };
-            var result = ArePointsNear(checkPoint, centerPoint, 0.0015);
             expect(result).toBeTruthy();
         });
     });
