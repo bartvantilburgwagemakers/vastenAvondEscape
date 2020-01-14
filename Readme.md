@@ -12,6 +12,7 @@
 ## Info
 
 Wij  proberen en spel te maken dat een soort speur toch met raadsels door de bergse binnestan moet worden.
+[De demo is hier te vinden](https://vastenavondescape.netlify.com/)
 
 
 ### [PouchDB](https://pouchdb.com/learn.html)
