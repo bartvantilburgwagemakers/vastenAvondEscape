@@ -11,20 +11,8 @@
 
 ## Info
 
-Will be using babel, jest and typescript here
+Wij  proberen en spel te maken dat een soort speur toch met raadsels door de bergse binnestan moet worden.
 
-### Jest
-
-[documentation](https://github.com/basarat/typescript-book/blob/master/docs/testing/jest.md)
-[jest site](https://jestjs.io/docs/en/configuration)
-
-Run tests
-Run `npx jest` from your project root and jest will execute any tests you have.
-or `npx jest --watch`
-
-#### config
-
-[](https://jestjs.io/docs/en/getting-started#using-typescript)
 
 ### [PouchDB](https://pouchdb.com/learn.html)
 
