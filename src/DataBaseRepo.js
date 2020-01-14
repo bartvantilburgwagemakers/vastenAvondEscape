@@ -78,13 +78,13 @@ export function SetQuestionsIfNeeded() {
     });
 }
 
-export function DbInfo(){
-    return db.info().then(function (result) {
-       return result.doc_count;
-      }).catch(function (err) {
+export function DbInfo() {
+    return db.info().then(function(result) {
+        return result.doc_count;
+    }).catch(function(err) {
         console.log(err);
         return 0;
-      });
+    });
 }
 
 export function HasAnswered(vraag) {
@@ -94,4 +94,13 @@ export function HasAnswered(vraag) {
 
 function deleteButtonPressed(todo) {
     db.remove(todo);
+}
+
+export function ResetDb() {
+    new PouchDB('vastenAvondApp').destroy().then(function() {
+        location.reload();
+    }).catch(function(err) {
+        console.log(err);
+        alert("er ging iets mis");
+    })
 }
