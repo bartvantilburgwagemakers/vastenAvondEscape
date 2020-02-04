@@ -96,6 +96,7 @@ export function SetCurrentQuestion(question) {
             alert("good zo");
             DataRepo.HasAnswered(window.CurrentQuestion);
             GetNextQuestion();
+            answerText.value="";
         } else {
             console.log("gewesnt" + question.Antwoord);
             console.log("given" + answerText.value.trim());
