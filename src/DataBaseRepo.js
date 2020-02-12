@@ -43,8 +43,10 @@ export function GetByLoc(long, lat) {
     }).then(function(result) {
         console.log(result);
         if (result.docs.length != 0) {
+            if(result.docs[0]._id !== window.CurrentQuestion._id){
             QuestionsService.SetCurrentQuestion(result.docs[0]);
             console.log("set question by loc" + result.docs[0]._id);
+            }
         } else {
             console.log("kan niet vinden ");
             GetNextQuestion();
@@ -56,14 +58,19 @@ export function GetByLoc(long, lat) {
 }
 
 function GetNextQuestion() {
+    var currentId = window.CurrentQuestion?._id
     db.find({
-        selector: { Location_long: null, Location_lat: null, IsJuistBeandwoord: false },
+        selector: { Location_long: null, Location_lat: null, IsJuistBeandwoord: false},
         sort: ['_id'],
-        limit: 1
+        limit: 2
     }).then(function(result) {
         if (result.docs.length != 0) {
-            QuestionsService.SetCurrentQuestion(result.docs[0]);
-            console.log("set question by next" + result.docs[0]._id);
+            var question = result.docs[0];
+            if(question._id == currentId && result.docs.length){
+                question = result.docs[1];
+            }
+            QuestionsService.SetCurrentQuestion(question);
+            console.log("set question by next" + question._id);
         }
     }).catch(function(err) {
         console.log(err);
