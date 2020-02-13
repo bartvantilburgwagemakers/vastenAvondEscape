@@ -17,6 +17,9 @@
 <script type="module">
     import { ResetDb } from '/src/DataBaseRepo.js'; window.ResetDb = ResetDb;
 </script>
+<script type="module">
+    import { ShowHint } from '/src/Ux.mjs'; window.ShowHint = ShowHint;
+</script>
 
 <head lang="en">
     <meta charset="UTF-8">
@@ -39,6 +42,7 @@
             <button onclick="install()"> Install</button>
             <button onclick="window.GetCurrentLocation()"><span >locatie test </span></button>
             <button onclick="window.GetNextQuestion()"><span >volgende vraag</span></button>
+            <button onclick="ShowHint()"><span >hint</span></button>
             <button onclick="window.ResetDb()"> <span>reset</span> </button>
             <hr style="margin-bottom: 20px">
 
