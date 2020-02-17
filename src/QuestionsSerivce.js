@@ -34,7 +34,10 @@ function AddNewQuestion() {
 }
 
 function GetQuestions() {
-    var draakVraag1 = Vraag.NewVraag("1", "Onlosmakelijk aan de draak verbonden: sint <br/> <br/> Nicolaas= 1 " +
+    var vraag6 = Vraag.NewVraagLocationAntword("1", "51.49255506", "4.2877107", "De saeck", "De saeck");
+    questions.push(vraag6);
+    
+    var draakVraag1 = Vraag.NewVraag("6", "Onlosmakelijk aan de draak verbonden: sint <br/> <br/> Nicolaas= 1 " +
         "<br/> Antonius= 2  <br/>Petrus= 3 <br/> Joris= 4 <br/> Jakobus= 5 <br/>  Walrik= 6 <br/> Maarten= 7 <br/> Anna= 8", "11", "het zijn er 2+");
     questions.push(draakVraag1);
     var vraag2 = Vraag.NewVraag("2", "Wat is de laatste zin en officiële tittel die bij dit beeld hoort?", "Kek naar oe eige", "kijk in de spiegel", "../Assets/opdracht2.jpg");
@@ -56,12 +59,8 @@ function GetQuestions() {
     questions.push(draak);
     var zwijnshoofd = Vraag.NewVraagLatLong("10", "51.495688", "4.28336021", "waar ben je", "Zwijnshoofd", "Zwijnshoofd");
     questions.push(zwijnshoofd);
-    var vraag6 = Vraag.NewVraagLatLong("6", "51.49255506", "4.2877107", "waar ben je", "De saeck", "De saeck");
-    questions.push(vraag6);
-    var Stoellemat = Vraag.NewVraagLatLong("15", "51.49471892", "4.28190966", "waar ben je", "Stoellemat", "Stoellemat");
-    questions.push(Stoellemat);
-    var OnderDePeperbus = Vraag.NewVraagLatLong("16", "51.4943376", "4.28743893", "waar ben je", "Onder de peperbus ", "Onder de peperbus ");
-    questions.push(OnderDePeperbus);
+
+   
     var GroenePaard = Vraag.NewVraagLatLong("9", "51.49420007", "4.28808471", "waar ben je", "Groene paard", "Groene paard");
     questions.push(GroenePaard);
     
@@ -71,6 +70,10 @@ function GetQuestions() {
     questions.push(dweilpak);
     var provoost = Vraag.NewVraagLatLong("13", "51.49393937", "4.28543607", "waar ben je", "provoost", "provoost");
     questions.push(provoost);
+    var Stoellemat = Vraag.NewVraagLatLong("15", "51.49471892", "4.28190966", "waar ben je", "Stoellemat", "Stoellemat");
+    questions.push(Stoellemat);
+    var OnderDePeperbus = Vraag.NewVraagLatLong("16", "51.4943376", "4.28743893", "waar ben je", "Onder de peperbus ", "Onder de peperbus ");
+    questions.push(OnderDePeperbus);
 }
 
 export function SetCurrentQuestion(question) {

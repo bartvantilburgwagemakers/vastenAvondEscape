@@ -9,7 +9,7 @@
 
 <!-- <script src="lib/DataBaseRepo.js"></script> -->
 <script type="module">
-    import { GetCurrentLocation } from '/src/LocationService.js'; window.GetCurrentLocation = GetCurrentLocation;
+    import { GetCurrentLocation, StartWatching } from '/src/LocationService.js'; window.GetCurrentLocation = GetCurrentLocation; StartWatching();
 </script>
 <script type="module">
     import { GetNextQuestion } from '/src/QuestionsSerivce.js'; window.GetNextQuestion = GetNextQuestion;

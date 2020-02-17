@@ -4,6 +4,7 @@ export function NewVraagLatLong(id, lat, long, vraag, antwoord, hint) {
 
     var shortLat = LocationService.GetShortLatitude(lat);
     var shortLong = LocationService.GetShortLongitude(long);
+
     console.log("new  vraag shortLat " + shortLat + " shortLong " + shortLong)
     return {
         _id: id,
@@ -25,5 +26,14 @@ export function NewVraag(id, vraag, antwoord, hint, media_uri) {
         Media_uri: media_uri,
         Location_long: null,
         Location_lat: null
+    }
+}
+export function NewVraagLocationAntword(id, lat, long, vraag, hint) {
+    return {
+        _id: id,
+        LocationAtnwoord: { lng: long, lat:lat},
+        Vraag: vraag,
+        Hint: hint,
+        IsJuistBeandwoord: false
     }
 }

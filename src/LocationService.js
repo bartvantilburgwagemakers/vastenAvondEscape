@@ -54,7 +54,7 @@ export function showError(error) {
     }
 }
 
-const watcher = navigator.geolocation.watchPosition(displayLocationInfo);
+var watcher = navigator.geolocation.watchPosition(displayLocationInfo);
 
 export function StopWatching() {
     navigator.geolocation.clearWatch(watcher);
@@ -66,12 +66,9 @@ export function StartWatching() {
 }
 
 function displayLocationInfo(position) {
-    const lng = GetShortLongitude(position.coords.longitude);
-    const lat = GetShortLatitude(position.coords.latitude);
-    var long = GetShortLongitude("4.3139517");
-    var late = GetShortLatitude("51.4966615");
-    // console.log(`longitude: ${ lng } ${long} | latitude: ${ lat } ${late}`);
-    if (lng === long && lat === late) {
+    var currentLoc = { lat: position.coords.latitude, lng: position.coords.longitude }
+    var centerPoint = { lat: 51.4966615, lng: 4.3139517 };
+    if (ArePointsNear(currentLoc, centerPoint)) {
         var locDiv = document.getElementById("loc");
         locDiv.innerText = "Welkom Thuis lieve schat ";
         var vraagDiv = document.getElementById("question");
@@ -81,6 +78,7 @@ function displayLocationInfo(position) {
         QuestionsService.GetNextQuestion();
         StopWatching();
     }
+    /// set for location quistions if loctions is hit show succes 
 }
 
 export function ArePointsNear(checkPoint, centerPoint) {
