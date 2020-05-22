@@ -57,6 +57,18 @@ export function GetByLoc(long, lat) {
     });
 }
 
+export function GetById(id){
+    db.get(id)
+    .then(function(doc){
+            var row = JSON.parse(JSON.stringify(doc));
+            console.log(row) //should now work
+            QuestionsService.SetCurrentQuestion(doc);
+    })
+     .catch(function(err){
+         console.log(err)
+     })
+}
+
 function GetNextQuestion() {
     var currentId = window.CurrentQuestion?._id
     db.find({

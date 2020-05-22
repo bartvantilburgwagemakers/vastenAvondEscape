@@ -24,3 +24,7 @@ npm i -D babel-core babel-polyfill babel-preset-es2015 babel-preset-stage-0 babe
 # pwa 
 
 go to https://www.pwabuilder.com/serviceworker for info and help 
+
+## To test localy
+
+use `npx serve`
