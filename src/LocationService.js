@@ -71,16 +71,8 @@ function displayLocationInfo(position) {
     var long = GetShortLongitude("4.3139517");
     var late = GetShortLatitude("51.4966615");
     // console.log(`longitude: ${ lng } ${long} | latitude: ${ lat } ${late}`);
-    if (lng === long && lat === late) {
-        var locDiv = document.getElementById("loc");
-        locDiv.innerText = "Welkom Thuis lieve schat ";
-        var vraagDiv = document.getElementById("question");
-        vraagDiv.innerHTML = "Ik hou van je ";
-        StopWatching();
-    } else {
         QuestionsService.GetNextQuestion();
         StopWatching();
-    }
 }
 
 export function ArePointsNear(checkPoint, centerPoint) {
