@@ -5,15 +5,10 @@ import * as Vraag from "../src/Vraag.js"
 var questions = [];
 
 export function GetNextQuestion() {
-    var loc = LocationService.GetCurrentLocation();
-    loc.then(function(result) {
-        var latitude = result[0];
-        var longitude = result[1];
-        var shortLat = LocationService.GetShortLatitude(latitude);
-        var shortLong = LocationService.GetShortLongitude(longitude);
-        DataRepo.GetByLoc(shortLong, shortLat);
-        window.GetByLoc = DataRepo.GetByLoc;
-    });
+    var querryId = window.location.search.substring(1).split("=")[1];
+    var vraagResult = DataRepo.GetById(querryId);
+ console.log("vraagResult= "+vraagResult);
+
     DataRepo.DbInfo().then(function(DbInfo) {
         if (DbInfo > 2) { DbInfo = DbInfo - 2; } // door de indexe die ook mee komen
         if (DbInfo < questions.length) {
